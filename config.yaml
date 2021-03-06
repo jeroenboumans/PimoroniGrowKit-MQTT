@@ -1,0 +1,8 @@
+broker:
+    port: 1883
+    host: HOST_IP_ADDRESS # 192.168.86.x
+    topic: TOPIC          # home/livingroom/plants
+
+auth:
+    username: USERNAME    # MQTT username
+    password: PASSWORD    # MQTT password
