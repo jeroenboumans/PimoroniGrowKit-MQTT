@@ -80,7 +80,7 @@ To read data, register the following sensors in your Home Assistant config files
 # sensors.yaml
  - platform: mqtt
    name: "Saturation"
-   state_topic: " home/livingroom/plants"
+   state_topic: "home/livingroom/plants"
    value_template: "{{ value_json.sensor_0.saturation }}"
    json_attributes_topic: " home/livingroom/plants"
    json_attributes_template: "{{ value_json.sensor_0 | tojson }}"
@@ -91,10 +91,21 @@ To read data, register the following sensors in your Home Assistant config files
 # sensors.yaml
  - platform: mqtt
    name: "Moisture"
-   state_topic: " home/livingroom/plants"
+   state_topic: "home/livingroom/plants"
    value_template: "{{ value_json.sensor_0.moisture }}"
    json_attributes_topic: " home/livingroom/plants"
    json_attributes_template: "{{ value_json.sensor_0 | tojson }}"
+```
+
+## Lux level
+```yaml
+ - platform: mqtt
+   name: "Lux"
+   state_topic: "home/livingroom/plants"
+   unit_of_measurement: 'Lux'
+   value_template: "{{ value_json.light }}"
+   json_attributes_topic: "home/livingroom/plants"
+   json_attributes_template: "{{ value_json.light }}"
 ```
 
 All three sensor's data can be loaded in your view using [kalkih/mini-graph-card](https://github.com/kalkih/mini-graph-card):

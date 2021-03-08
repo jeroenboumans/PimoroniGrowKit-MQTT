@@ -1,6 +1,7 @@
 import time
 import json
 import yaml;
+import ltr559
 from grow.moisture import Moisture
 import paho.mqtt.client as mqtt
 
@@ -40,11 +41,12 @@ client.connect(broker.get('host', 'homeassistant.local'), broker.get('port', 188
 print("Start submitting sensor data on MQTT topic {}".format(broker.get('topic')))
 
 sensors = [Moisture(1), Moisture(2), Moisture(3)]
+light = ltr559.LTR559()
 
 while True:
 
     i = 0
-    payload = {}
+    payload = {"light": light.get_lux()}
     for i in range(0, len(sensors)):
         payload["sensor_{}".format(i)] = {
             "moisture": sensors[i].moisture,
