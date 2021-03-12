@@ -140,3 +140,14 @@ show:
   average: false
   extrema: true
 ```
+
+## Run at boot
+
+Add the MQTT client as a startup script:
+```bash
+# Open de crontab file
+$ crontab -e
+
+# Add to bottom:
+@reboot sleep 30 && python3 /home/pi/log.phat.py & 2>&1 >> /home/pi/log.phat.log
+```
