@@ -42,8 +42,9 @@ A Home Assistent state listener made with Python powered by the Home Asssistent 
 
     ```bash
     $ sudo apt update
-    $ sudo apt install python-pip 
-    $ pip install asyncio paho-mqtt PyYAML
+    $ sudo apt install python3-pip
+    $ pip3 install asyncio paho-mqtt
+    $ pip3 install -U PyYAML
     ```
 6. Install Pimoroni's Grow Kit python library
 
@@ -63,7 +64,7 @@ A Home Assistent state listener made with Python powered by the Home Asssistent 
 
 ```bash
 sudo chmod +x watcher.py
-python watcher.py &
+python3 watcher.py &
 ```
 
 # Read as sensor in Home Assistant
