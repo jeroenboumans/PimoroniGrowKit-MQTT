@@ -69,7 +69,7 @@ python3 watcher.py &
 
 # Read as sensor in Home Assistant
 
-![](https://i.imgur.com/UL9don8.png)
+![](https://i.imgur.com/J89flMq.png)
 
 Every Grow Kit moisture sensor needs to be registered as a sensor in Home Assistant.
 Both moisture and saturation can be read from the topic. 
