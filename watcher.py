@@ -17,7 +17,7 @@ def on_message(client, userdata, msg):
 
 def load_config():
     with open('config.yaml') as f:
-        return yaml.load(f, Loader=yaml.FullLoader)
+        return yaml.load(f)
 
 
 def broker():
