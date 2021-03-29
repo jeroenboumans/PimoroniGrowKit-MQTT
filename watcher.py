@@ -1,7 +1,8 @@
 import time
 import json
-import yaml;
+import yaml
 import ltr559
+import sys, os, pathlib
 from grow.moisture import Moisture
 import paho.mqtt.client as mqtt
 
@@ -16,7 +17,9 @@ def on_message(client, userdata, msg):
 
 
 def load_config():
-    with open('config.yaml') as f:
+
+    pathlib.Path(__file__).parent.absolute()
+    with open(os.path.join(pathlib.Path(__file__).parent.absolute(), 'config.yaml')) as f:
         return yaml.load(f)
 
 
