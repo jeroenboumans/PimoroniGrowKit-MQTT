@@ -1,11 +1,21 @@
 #!/bin/bash
 
 red=`tput setaf 9`
+purple=`tput setaf 4`
 green=`tput setaf 10`
 yellow=`tput setaf 11`
 reset=`tput sgr0`
 checkmark="${green}✔${reset}"
 cross="${red}✖${reset}"
+
+echo "${purple}"
+echo "                                                          "
+echo " _____               _   _ _      _____ _____ _____ _____ "
+echo "|   __|___ ___ _ _ _| |_|_| |_   |     |     |_   _|_   _|"
+echo "|  |  |  _| . | | | | '_| |  _|  | | | |  |  | | |   | |  "
+echo "|_____|_| |___|_____|_,_|_|_|    |_|_|_|__  _| |_|   |_|  "
+echo "                                          |__|            "
+echo "${reset}"
 
 echo "Do you want to install/uninstall the watcher service? (i/u/Cancel)"
 read answer
