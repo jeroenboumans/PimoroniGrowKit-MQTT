@@ -7,9 +7,8 @@ yellow=`tput setaf 11`
 reset=`tput sgr0`
 checkmark="${green}✔${reset}"
 cross="${red}✖${reset}"
-
+printf "\033c"
 echo "${purple}"
-echo "                                                          "
 echo " _____               _   _ _      _____ _____ _____ _____ "
 echo "|   __|___ ___ _ _ _| |_|_| |_   |     |     |_   _|_   _|"
 echo "|  |  |  _| . | | | | '_| |  _|  | | | |  |  | | |   | |  "
@@ -41,7 +40,6 @@ elif [ "$answer" != "${answer#[Iiy]}" ] ;then
     
     sudo systemctl daemon-reload
     printf "\n${checkmark} Reloaded systemctl\n"
-    
     printf "\nDo you want to run the service at the boot of your system? (Y/n): "
     read answer
     
