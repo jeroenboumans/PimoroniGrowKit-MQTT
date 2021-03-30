@@ -16,8 +16,9 @@ echo "|  |  |  _| . | | | | '_| |  _|  | | | |  |  | | |   | |  "
 echo "|_____|_| |___|_____|_,_|_|_|    |_|_|_|__  _| |_|   |_|  "
 echo "                                          |__|            "
 echo "${reset}"
+printf "More info at: ${green}https://link.studionoorderlicht.nl/mqtt${reset}\n\n"
 
-echo "Do you want to install/uninstall the watcher service? (i/u/Cancel)"
+printf "Do you want to install/uninstall the watcher service? (i/u/Cancel): "
 read answer
 
 if [ "$answer" != "${answer#[Uu]}" ] ;then
@@ -33,27 +34,27 @@ if [ "$answer" != "${answer#[Uu]}" ] ;then
 elif [ "$answer" != "${answer#[Iiy]}" ] ;then
     
     sudo chmod +x watcher.py
-    echo "${checkmark} Made watcher.py executable"
+    printf "\n${checkmark} Made watcher.py executable"
     
     sudo cp service /etc/systemd/system/growkit-mqtt.service
-    echo "${checkmark} Installed service"
+    printf "\n${checkmark} Installed service"
     
     sudo systemctl daemon-reload
-    echo "${checkmark} Reloaded systemctl"
+    printf "\n${checkmark} Reloaded systemctl\n"
     
-    echo "Do you want to run the service at the boot of your system? (Y/n)"
+    printf "\nDo you want to run the service at the boot of your system? (Y/n): "
     read answer
     
     if [ "$answer" != "${answer#[Nn]}" ] ;then
-        echo "${cross} Skipping boot configuration"
+        printf "\n${cross} Skipping boot configuration"
     else
         sudo systemctl enable growkit-mqtt.service
-        echo "${checkmark} Installed the watcher as startup service"
+        printf "\n${checkmark} Installed the watcher as startup service"
     fi
     
     sudo systemctl start growkit-mqtt.service
-    echo "${checkmark} Watcher service started systemctl"
+    printf "\n${checkmark} Watcher service started systemctl\n\n"
 
 else
-   echo "${cross} Canceling setup..."
+   printf "\n${cross} Canceling setup...\n\n"
 fi
