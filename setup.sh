@@ -15,7 +15,7 @@ echo "|  |  |  _| . | | | | '_| |  _|  | | | |  |  | | |   | |  "
 echo "|_____|_| |___|_____|_,_|_|_|    |_|_|_|__  _| |_|   |_|  "
 echo "                                          |__|            "
 echo "${reset}"
-printf "More info at: ${green}https://link.studionoorderlicht.nl/mqtt${reset}\n\n"
+printf "More info at: 🌿🌱 ${green}https://link.studionoorderlicht.nl/mqtt${reset} 🌱🌿\n\n"
 
 printf "Do you want to install/uninstall the watcher service? (i/u/Cancel): "
 read answer
