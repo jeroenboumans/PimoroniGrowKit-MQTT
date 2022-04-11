@@ -30,6 +30,8 @@ def broker():
 def auth():
     return load_config().get('auth')
 
+# Give time for the network to be initialised before starting up
+time.sleep(120)
 
 config = load_config()
 broker = broker()
@@ -60,6 +62,6 @@ while True:
 
     print(json.dumps(payload))
 
-    time.sleep(30)
+    time.sleep(config.get("read_rate", 30))
 
 client.loop_forever()
