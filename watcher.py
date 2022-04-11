@@ -19,7 +19,7 @@ def on_message(client, userdata, msg):
 def load_config():
 
     pathlib.Path(__file__).parent.absolute()
-    with open(os.path.join(pathlib.Path(__file__).parent.absolute(), 'config.yaml')) as f:
+    with open(os.path.join(pathlib.Path(__file__).parent.absolute(), 'local_config.yaml')) as f:
         return yaml.load(f)
 
 
