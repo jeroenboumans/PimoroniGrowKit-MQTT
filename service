@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/python3 -u watcher.py
-WorkingDirectory=/home/pi/PimoroniGrowKit-MQTT/
+WorkingDirectory=/home/pigrow/PimoroniGrowKit-MQTT/
 StandardOutput=syslog+console
 StandardError=syslog+console
 Restart=always
-User=pi
+User=pigrow
 
 [Install]
 WantedBy=multi-user.target
